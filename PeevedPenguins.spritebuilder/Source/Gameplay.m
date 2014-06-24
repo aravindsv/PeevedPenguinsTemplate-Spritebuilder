@@ -14,7 +14,7 @@
     CCPhysicsNode *_physicsNode;
 }
 
--(void)didLoadFromCCb
+-(void)didLoadFromCCB
 {
     CCLOG(@"Loaded from CCB");
     self.userInteractionEnabled = YES;
