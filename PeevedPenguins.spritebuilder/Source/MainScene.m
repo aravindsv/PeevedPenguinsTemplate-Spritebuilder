@@ -12,6 +12,7 @@
 
 -(void)play
 {
+    CCLOG(@"Going to gameplay scene");
     CCScene *gameplayScene = [CCBReader loadAsScene:@"Gameplay"];
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
 }
