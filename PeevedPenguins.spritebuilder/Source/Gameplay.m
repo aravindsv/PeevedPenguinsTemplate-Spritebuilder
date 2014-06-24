@@ -51,7 +51,7 @@
     [_contentNode runAction:follow];
 }
 
--(void)retry
+-(void)reset
 {
     [[CCDirector sharedDirector] replaceScene: [CCBReader loadAsScene:@"Gameplay"]];
 }
