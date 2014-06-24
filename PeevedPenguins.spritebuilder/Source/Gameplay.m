@@ -16,7 +16,9 @@
 
 -(void)didLoadFromCCb
 {
+    CCLOG(@"Loaded from CCB");
     self.userInteractionEnabled = YES;
+    CCLOG(self.userInteractionEnabled);
 }
 
 -(void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
