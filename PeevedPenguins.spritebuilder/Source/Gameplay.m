@@ -17,6 +17,8 @@
     CCNode *_pullbackNode;
     CCNode *_mouseJointNode;
     CCPhysicsJoint *_mouseJoint;
+    CCNode *_currentPenguin;
+    CCPhysicsJoint *_penguinCatapultJoint;
 }
 
 -(void)didLoadFromCCB
@@ -43,6 +45,13 @@
         _mouseJointNode.position = touchLocation;
         _mouseJoint = [CCPhysicsJoint connectedSpringJointWithBodyA:_mouseJointNode.physicsBody bodyB:_catapultArm.physicsBody anchorA:ccp(0, 0) anchorB:ccp(34, 138) restLength:0.0f stiffness:3000.0f damping:150.0f];
     }
+    
+    _currentPenguin = [CCBReader load:@"Penguin"];
+    CGPoint penguinPos = [_catapultArm convertToWorldSpace:ccp(34, 138)];
+    _currentPenguin.position = [_physicsNode convertToWorldSpace:penguinPos];
+    [_physicsNode addChild:_currentPenguin];
+    _currentPenguin.physicsBody.allowsRotation = FALSE;
+    _penguinCatapultJoint = [CCPhysicsJoint connectedPivotJointWithBodyA:_currentPenguin.physicsBody bodyB:_catapultArm.physicsBody anchorA:_currentPenguin.anchorPointInPoints];
 }
 
 -(void)touchMoved:(UITouch *)touch withEvent:(UIEvent *)event
@@ -68,6 +77,15 @@
         [_mouseJoint invalidate];
         _mouseJoint = nil;
     }
+    [_penguinCatapultJoint invalidate];
+    _penguinCatapultJoint = nil;
+    
+    // after snapping rotation is fine
+    _currentPenguin.physicsBody.allowsRotation = TRUE;
+    
+    // follow the flying penguin
+    CCActionFollow *follow = [CCActionFollow actionWithTarget:_currentPenguin worldBoundary:self.boundingBox];
+    [_contentNode runAction:follow];
 }
 
 -(void)launchPenguin
