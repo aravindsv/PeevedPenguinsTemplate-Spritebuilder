@@ -127,8 +127,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -206,7 +204,7 @@
 				<key>memberVarAssignmentName</key>
 				<string>_catapultArm</string>
 				<key>memberVarAssignmentType</key>
-				<integer>2</integer>
+				<integer>1</integer>
 				<key>properties</key>
 				<array>
 					<dict>
@@ -280,6 +278,10 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
+				<key>seqExpanded</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -680,9 +682,9 @@
 			<key>name</key>
 			<string>Default Timeline</string>
 			<key>offset</key>
-			<real>0.0</real>
+			<real>1.3661456108093262</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>4.7333331108093262</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
