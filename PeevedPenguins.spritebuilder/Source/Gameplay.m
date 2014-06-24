@@ -33,7 +33,7 @@
     CCNode *penguin = [CCBReader load:@"Penguin"];
     float x = _catapultArm.position.x;
     float y = _catapultArm.position.y;
-    CCLOG(@"X Position is %d. Y position is %d", x, y);
+    CCLOG(@"X Position is %f. Y position is %f", x, y);
     //penguin.position = ccpAdd(_catapultArm.position, ccp(15, 50));
     penguin.position = ccpAdd(_catapultArm.position, ccp(32, 135));
     
