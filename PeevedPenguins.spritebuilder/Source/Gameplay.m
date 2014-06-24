@@ -21,6 +21,7 @@
 
 -(void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
+    CCLOG(@"screen touched");
     [self launchPenguin];
 }
 
