@@ -34,6 +34,8 @@
     
     _pullbackNode.physicsBody.collisionMask = @[];
     _mouseJointNode.physicsBody.collisionMask = @[];
+    
+    _physicsNode.collisionDelegate = self;
 }
 
 -(void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
@@ -109,4 +111,8 @@
     [[CCDirector sharedDirector] replaceScene: [CCBReader loadAsScene:@"Gameplay"]];
 }
 
+-(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair seal:(CCNode *)nodeA wildcard:(CCNode *)nodeB
+{
+    CCLOG(@"Something collided with a seal!");
+}
 @end
