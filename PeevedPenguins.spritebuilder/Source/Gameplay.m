@@ -57,6 +57,7 @@ static const float MIN_SPEED = 5.f;
 
 -(void)nextAttempt
 {
+    CCLOG(@"Next Attempt");
     _currentPenguin = nil;
     [_contentNode stopAction:_followPenguin];
     
