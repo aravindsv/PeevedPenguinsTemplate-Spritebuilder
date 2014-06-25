@@ -29,8 +29,8 @@ static const float MIN_SPEED = 5.f;
 
 -(void)update:(CCTime)delta
 {
-    if (_currentPenguin.launched)
-    {
+    //if (_currentPenguin.launched)
+    //{
         if (ccpLength(_currentPenguin.physicsBody.velocity) < MIN_SPEED)
         {
             [self nextAttempt];
@@ -52,7 +52,7 @@ static const float MIN_SPEED = 5.f;
             [self nextAttempt];
             return;
         }
-    }
+   // }
 }
 
 -(void)nextAttempt
